@@ -1,0 +1,72 @@
+This file provides the commandline and fast-forward count for SPEC 2006 applications.
+
+For each SPEC application there is a directory with it name, this directory is called
+the application's home directory. The home directory of an application contains its
+32-bit static binary and input files.
+
+SPEC 2006 benchmark application commandline and fast forward count
+------------------------------------------------------------------
+1.  400.perlbench diffmail.pl
+	fast-forward: 207,000,000,000
+	commandline : ./perlbench_base.i386 -I./lib diffmail.pl 4 800 10 17 19 300 > perlbench.ref.diffmail.out 2> perlbench.ref.diffmail.err
+
+2.  401.bzip2 input.source
+	fast-forward: 301,000,000,000
+	commandline : ./bzip2_base.i386 input.source 280 > bzip2.ref.source.out 2> bzip2.ref.source.err
+
+3.  403.gcc cp-decl.i
+	fast-forward: 107,000,000,000
+	commandline : ./gcc_base.i386 cp-decl.i -o cp-decl.s > gcc.ref.cp-decl.out 2> gcc.ref.cp-decl.err
+
+4.  429.mcf
+	fast-forward: 377,000,000,000
+	commandline : ./mcf_base.i386 inp.in > mcf.ref.out 2> mcf.ref.err
+
+5.  436.cactusADM
+	fast-forward: 584,000,000,000
+	commandline : ./cactusADM_base.i386 benchADM.par > cactusADM.ref.out 2> cactusADM.ref.err
+
+6.  437.leslie3d
+	fast-forward: 2,346,000,000,000
+	commandline : ./leslie3d_base.i386 < leslie3d.in > leslie3d.ref.out 2> leslie3d.ref.err
+
+7.  450.soplex ref.mps
+	fast-forward: 364,000,000,000
+	commandline : ./soplex_base.i386 -m3500 ref.mps > soplex.ref.ref.out 2> soplex.ref.ref.err
+
+8.  456.hmmer nph3.hmm
+	fast-forward: 264,000,000,000
+	commandline : ./hmmer_base.i386 nph3.hmm swiss41 > hmmer.ref.nph3.out 2> hmmer.ref.nph3.err
+
+9.  462.libquantum
+	fast-forward: 3,605,000,000,000
+	commandline : ./libquantum_base.i386 1397 8 > libquantum.ref.out 2> libquantum.ref.err
+
+10. 470.lbm
+	fast-forward: 830,000,000,000
+	commandline : ./lbm_base.i386 3000 reference.dat 0 0 100_100_130_ldc.of > lbm.ref.out 2> lbm.ref.err
+
+11. 471.omnetpp
+	fast-forward: 43,000,000,000
+	commandline : ./omnetpp_base.i386 omnetpp.ini > omnetpp.ref.log 2> omnetpp.ref.err
+
+12. 482.sphinx3
+	fast-forward: 1,513,000,000,000
+	commandline : ./sphinx3_base.i386 ctlfile . args.an4 > sphinx3.ref.out 2> sphinx3.ref.err
+
+13. 483.xalancbmk
+	fast-forward: 1,331,000,000,000
+	commandline : ./xalancbmk_base.i386 -v t5.xml xalanc.xsl > xalancbmk.ref.out 2> xalancbmk.ref.err
+
+
+Executing Applications
+----------------------
+You must execute an application from its home directory only. If run from any other directory
+the applications may not execute correctly. Below we describe how to run the 400.perlbench application:
+	cd 400.perlbench/
+	./perlbench_base.i386 -I./lib diffmail.pl 4 800 10 17 19 300 > perlbench.ref.diffmail.out 2> perlbench.ref.diffmail.err
+
+The application 482.sphinx3 has a slightly different home directory structure, you must execute it as follows:
+	cd 482.sphinx3/
+	cd 1/2/482.sphinx3/
+	./sphinx3_base.i386 ctlfile . args.an4 > sphinx3.ref.out 2> sphinx3.ref.err
